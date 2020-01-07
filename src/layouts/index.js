@@ -1,26 +1,52 @@
 import styles from './index.css';
 import { Layout, Menu, Icon } from 'antd';
+import router from 'umi/router';
+import LogBtn from '../components/logBtn';
 
 function BasicLayout(props) {
   const { Header, Content, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
   return (
     <Layout>
-     <Header className={styles.header} >
-      <div className={styles.logo}>
-      <img src={require("../assets/logo.png")} alt="logo" width="200%" height="110%"/>
-      </div>
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
-      >
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
-    </Header>
+      <Header className={styles.header}>
+        <div className={styles.logo}>
+          <img src={require('../assets/logo.png')} alt="logo" width="200%" height="110%" />
+        </div>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={['2']}
+          style={{ lineHeight: '64px' }}
+        >
+          <Menu.Item
+            key="1"
+            onClick={() => {
+              router.push('/');
+            }}
+          >
+            nav 1
+          </Menu.Item>
+          <Menu.Item
+            key="2"
+            onClick={() => {
+              router.push('/product');
+            }}
+          >
+            nav 2
+          </Menu.Item>
+          <Menu.Item
+            key="3"
+            onClick={() => {
+              router.push('/mine');
+            }}
+          >
+            nav 3
+          </Menu.Item>
+        </Menu>
+        <div className={styles.btn}>
+          <LogBtn></LogBtn>
+        </div>
+      </Header>
       <Layout>
         <Sider
           breakpoint="lg"
@@ -82,13 +108,12 @@ function BasicLayout(props) {
         </Sider>
         <Layout>
           <Content style={{ margin: '24px 16px 0' }}>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>content {props.children}</div>
+            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>{props.children}</div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>MangoStore ©2018 Created by Wayxuan</Footer>
         </Layout>
       </Layout>
-      </Layout>
-
+    </Layout>
   );
 }
 

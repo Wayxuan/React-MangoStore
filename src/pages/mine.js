@@ -1,11 +1,11 @@
 import React from 'react'
 
-function home() {
+function mine() {
   return (
     <div>
-      第一块
+      mine
     </div>
   )
 }
 
-export default home
+export default mine
