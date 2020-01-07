@@ -1,0 +1,16 @@
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo{
+  width: 230px;
+  overflow: hidden;
+  margin-left:-30px
+}
