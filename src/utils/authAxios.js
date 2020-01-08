@@ -19,7 +19,7 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
 	function(response) {
-		if (response.status == 401) {
+		if (response.status === 401) {
 			//跳转login
 		} else {
 			// console.log("success");
