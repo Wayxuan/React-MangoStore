@@ -22,12 +22,12 @@ class loginBtn extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
-        <Button type="primary" onClick={this.showDrawer}>
-          <Icon type="plus" /> Login in
+        <Button type="link" onClick={this.showDrawer}>
+          <Icon type="user" /> 立即登录
         </Button>
         <Drawer
           title="Login in"
-          width={620}
+          width={"60%"}
           onClose={this.onClose}
           visible={this.state.visible}
           // bodyStyle={{ paddingBottom: 80 }}

@@ -50,24 +50,11 @@ class LoginForm extends React.Component {
             />,
           )}
         </Form.Item>
-        <Form.Item>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(<Checkbox className='login-form-remember'>Remember me</Checkbox>)}
-          <a className="login-form-forgot" href="">
-            Forgot password
-          </a>
-          </Form.Item>
           <Form.Item>
           <Button type="primary" htmlType="submit" className="login-form-button" size="large" >
             Log in
           </Button>
           </Form.Item>
-          Or
-         {/*  <Router>
-           <Link to="/Register">register now!</Link>
-           </Router> */}
         </Col> </Row>
       </Form>
     );
