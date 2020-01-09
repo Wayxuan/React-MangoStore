@@ -17,7 +17,6 @@ class category extends Component {
 
   render() {
     const { category } = this.props;
-    console.log(category)
     const columns = [
       {
         title: '类别',
@@ -39,7 +38,6 @@ class category extends Component {
       },
     ];
 
-    console.log(this.props);
     return (
       <div>
         <Table columns={columns} dataSource={category} rowKey={record => record._id} bordered />,
@@ -50,3 +48,5 @@ class category extends Component {
 
 const mapStateToProps = state => state.category;
 export default connect(mapStateToProps)(category);
+
+

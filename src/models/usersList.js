@@ -13,7 +13,6 @@ export default({
   effects:{
     *loadData({payload},{call,put}){
       const result=yield call(users)
-      console.log(result)
       yield put({
         type:"save",
         payload:{

@@ -12,7 +12,7 @@ class Aorders extends Component {
       productImg: '',
       productPrice: '',
       productSize: '',
-      productNum:''
+      productNum:'',
     };
   }
 
@@ -23,9 +23,8 @@ class Aorders extends Component {
     });
   }
 
-  render() {
-    console.log(this.props.products);
 
+  render() {
     const { products } = this.props;
 
     const columns = [
@@ -33,32 +32,33 @@ class Aorders extends Component {
         title: '商品名',
         dataIndex: 'productTitle',
         align: 'center',
-        width: 200,
+        width: "20%",
         ellipsis: true,
       },
       {
         title: '商品图',
         dataIndex: 'productImg',
         align: 'center',
-        render: record => <img src={record} width="100px" alt="" />,
+        width: "20%",
+        render: record => <img src={record} width="100%" alt="" />,
       },
       {
         title: '价格',
         dataIndex: 'productPrice',
         align: 'center',
-        width: 200,
+        width: "20%",
       },
       {
         title: '尺寸',
         dataIndex: 'productSize',
         align: 'center',
-        width: 200,
+        width: "20%",
       },
       {
         title: '数量',
         dataIndex: 'productNum',
         align: 'center',
-        width: 200,
+        width: "20%",
       }
     ];
 

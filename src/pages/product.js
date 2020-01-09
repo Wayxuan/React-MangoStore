@@ -23,8 +23,6 @@ class product extends Component {
   }
 
   render() {
-    console.log(this.props.products);
-
     const { products } = this.props;
 
     const columns = [
@@ -32,26 +30,27 @@ class product extends Component {
         title: '商品名',
         dataIndex: 'title',
         align: 'center',
-        width: 200,
+        width: "20%",
         ellipsis: true,
       },
       {
         title: '商品图',
         dataIndex: 'imgUrl',
         align: 'center',
-        render: record => <img src={record} width="100px" alt="" />,
+        width: "20%",
+        render: record => <img src={record} width="100%" alt="" />,
       },
       {
         title: '价格',
         dataIndex: 'OriginPrice',
         align: 'center',
-        width: 200,
+        width: "20%",
       },
       {
         title: '类别',
         dataIndex: 'name',
         align: 'center',
-        width: 200,
+        width: "20%",
       }
     ];
 

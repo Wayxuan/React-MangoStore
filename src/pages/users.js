@@ -30,25 +30,26 @@ class users extends Component {
         title: '用户名',
         dataIndex: 'name',
         align: 'center',
-        width: 200,
+        width: "20%",
         ellipsis: true,
       },
       {
         title: '电话号码',
         dataIndex: 'tel',
-        align: 'center'
+        align: 'center',
+        width: "30%",
       },
       {
         title: '地址',
         dataIndex: 'address',
         align: 'center',
-        width: 200,
+        width: "20%",
       },
       {
         title: '注册时间',
         dataIndex: 'createdAt',
         align: 'center',
-        width: 200,
+        width: "20%",
       }
     ];
     return (

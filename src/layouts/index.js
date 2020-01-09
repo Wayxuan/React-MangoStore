@@ -27,7 +27,7 @@ function BasicLayout(props) {
         <Sider
         style={{
           overflow: 'auto',
-          height: '240vh',
+          height: '90vh',
           position: 'fixed',
           left: 0,
           marginTop:64
@@ -160,7 +160,7 @@ function BasicLayout(props) {
             </SubMenu>
           </Menu>
         </Sider>
-        <Layout style={{ marginLeft: 250,marginTop:65 }}>
+        <Layout style={{ marginLeft: 250,marginTop:65}}>
           <Content style={{ margin: '24px 16px 0' }}>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>{props.children}</div>
           </Content>
