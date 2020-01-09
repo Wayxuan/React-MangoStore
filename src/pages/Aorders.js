@@ -4,20 +4,21 @@ import '../styles/product.css';
 import { connect } from 'dva';
 
 
-class product extends Component {
+class Aorders extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      imgUrl: '',
-      OriginPrice: '',
-      name: '',
+      productTitle: '',
+      productImg: '',
+      productPrice: '',
+      productSize: '',
+      productNum:''
     };
   }
 
   componentDidMount() {
     this.props.dispatch({
-      type: 'product/loadData',
+      type: 'Aorders/loadData',
       payload: {},
     });
   }
@@ -30,26 +31,32 @@ class product extends Component {
     const columns = [
       {
         title: '商品名',
-        dataIndex: 'title',
+        dataIndex: 'productTitle',
         align: 'center',
         width: 200,
         ellipsis: true,
       },
       {
         title: '商品图',
-        dataIndex: 'imgUrl',
+        dataIndex: 'productImg',
         align: 'center',
         render: record => <img src={record} width="100px" alt="" />,
       },
       {
         title: '价格',
-        dataIndex: 'OriginPrice',
+        dataIndex: 'productPrice',
         align: 'center',
         width: 200,
       },
       {
-        title: '类别',
-        dataIndex: 'name',
+        title: '尺寸',
+        dataIndex: 'productSize',
+        align: 'center',
+        width: 200,
+      },
+      {
+        title: '数量',
+        dataIndex: 'productNum',
         align: 'center',
         width: 200,
       }
@@ -63,5 +70,5 @@ class product extends Component {
   }
 }
 
-const mapStateToProps = state => state.product;
-export default connect(mapStateToProps)(product);
+const mapStateToProps = state => state.Aorders;
+export default connect(mapStateToProps)(Aorders);

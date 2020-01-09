@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
 import '../styles/product.css';
 import { connect } from 'dva';
 
 
-class product extends Component {
+class products extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +52,24 @@ class product extends Component {
         dataIndex: 'name',
         align: 'center',
         width: 200,
-      }
+      },
+      {
+        title: '操作',
+        align: 'center',
+        render: (text, record) => {
+          return (
+            <div>
+              <span>
+                <Button type="primary">编辑</Button>
+              </span>
+              <span> </span>
+              <span>
+                <Button type="danger">删除</Button>
+              </span>
+            </div>
+          );
+        },
+      },
     ];
 
     return (
@@ -64,4 +81,4 @@ class product extends Component {
 }
 
 const mapStateToProps = state => state.product;
-export default connect(mapStateToProps)(product);
+export default connect(mapStateToProps)(products);

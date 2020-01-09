@@ -7,8 +7,9 @@ function BasicLayout(props) {
   const { Header, Content, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
   return (
+    <div>
     <Layout>
-      <Header className={styles.header}>
+      <Header className={styles.header} style={{ position: 'fixed', zIndex: 9999, width: '100%' }}>
         <div className={styles.logo}>
           <img src={require('../assets/logo.png')} alt="logo" width="200%" height="110%" />
         </div>
@@ -17,48 +18,22 @@ function BasicLayout(props) {
           mode="horizontal"
           defaultSelectedKeys={['2']}
           style={{ lineHeight: '64px' }}
-        >
-          <Menu.Item
-            key="1"
-            onClick={() => {
-              router.replace('/');
-            }}
-          >
-            nav 1
-          </Menu.Item>
-          <Menu.Item
-            key="2"
-            onClick={() => {
-              router.replace('/product');
-            }}
-          >
-            nav 2
-          </Menu.Item>
-          <Menu.Item
-            key="3"
-            onClick={() => {
-              router.replace('/mine');
-            }}
-          >
-            nav 3
-          </Menu.Item>
-        </Menu>
+        ></Menu>
         <div className={styles.btnBox}>
           <LogBtn></LogBtn>
         </div>
       </Header>
       <Layout>
         <Sider
-          breakpoint="lg"
-          collapsedWidth="0"
+        style={{
+          overflow: 'auto',
+          height: '240vh',
+          position: 'fixed',
+          left: 0,
+          marginTop:64
+        }}
           theme="light"
           width={250}
-          onBreakpoint={broken => {
-            console.log(broken);
-          }}
-          onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
-          }}
         >
           <div className="logo" />
           <Menu theme="light" mode="inline" defaultSelectedKeys={['4']}>
@@ -69,7 +44,7 @@ function BasicLayout(props) {
               }}
             >
               <Icon type="pie-chart" />
-              <span>Option 1</span>
+              <span>首页</span>
             </Menu.Item>
             <Menu.Item
               key="2"
@@ -78,23 +53,23 @@ function BasicLayout(props) {
               }}
             >
               <Icon type="desktop" />
-              <span>Option 2</span>
+              <span>商品列表</span>
             </Menu.Item>
             <Menu.Item
               key="3"
               onClick={() => {
-                router.replace('/mine');
+                router.replace('/users');
               }}
             >
-              <Icon type="inbox" />
-              <span>Option 3</span>
+              <Icon type="user" />
+              <span>用户列表</span>
             </Menu.Item>
             <SubMenu
               key="sub1"
               title={
                 <span>
-                  <Icon type="mail" />
-                  <span>Navigation One</span>
+                  <Icon type="inbox" />
+                  <span>商品操作</span>
                 </span>
               }
             >
@@ -104,15 +79,15 @@ function BasicLayout(props) {
                   router.replace('/product');
                 }}
               >
-                Option 5
+                查询商品
               </Menu.Item>
               <Menu.Item
                 key="6"
                 onClick={() => {
-                  router.replace('/mine');
+                  router.replace('/products');
                 }}
               >
-                Option 6
+                商品管理
               </Menu.Item>
               <Menu.Item
                 key="7"
@@ -120,15 +95,15 @@ function BasicLayout(props) {
                   router.replace('/');
                 }}
               >
-                Option 7
+                修改商品
               </Menu.Item>
               <Menu.Item
                 key="8"
                 onClick={() => {
-                  router.replace('/product');
+                  router.replace('/category');
                 }}
               >
-                Option 8
+                分类管理
               </Menu.Item>
             </SubMenu>
             <SubMenu
@@ -136,48 +111,56 @@ function BasicLayout(props) {
               title={
                 <span>
                   <Icon type="appstore" />
-                  <span>Navigation Two</span>
+                  <span>订单操作</span>
                 </span>
               }
             >
               <Menu.Item
                 key="9"
                 onClick={() => {
-                  router.replace('/');
+                  router.replace('/orders');
                 }}
               >
-                Option 9
+                全部订单
               </Menu.Item>
               <Menu.Item
                 key="10"
                 onClick={() => {
-                  router.replace('/mine');
+                  router.replace('/Aorders');
                 }}
               >
-                Option 10
+                已销售订单
               </Menu.Item>
-              <SubMenu key="sub3" title="Submenu">
+              <Menu.Item
+                key="11"
+                onClick={() => {
+                  router.replace('/Borders');
+                }}
+              >
+                 未付款订单
+              </Menu.Item>
+              <SubMenu key="sub3" title="业绩分析">
                 <Menu.Item
-                  key="11"
+                  key="12"
                   onClick={() => {
                     router.replace('/product');
                   }}
                 >
-                  Option 11
+                  商品销售分析
                 </Menu.Item>
                 <Menu.Item
-                  key="12"
+                  key="13"
                   onClick={() => {
                     router.replace('/mine');
                   }}
                 >
-                  Option 12
+                  生成分析报告
                 </Menu.Item>
               </SubMenu>
             </SubMenu>
           </Menu>
         </Sider>
-        <Layout>
+        <Layout style={{ marginLeft: 250,marginTop:65 }}>
           <Content style={{ margin: '24px 16px 0' }}>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>{props.children}</div>
           </Content>
@@ -185,6 +168,7 @@ function BasicLayout(props) {
         </Layout>
       </Layout>
     </Layout>
+    </div>
   );
 }
 

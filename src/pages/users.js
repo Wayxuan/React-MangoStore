@@ -4,58 +4,55 @@ import '../styles/product.css';
 import { connect } from 'dva';
 
 
-class product extends Component {
+class users extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      imgUrl: '',
-      OriginPrice: '',
       name: '',
+      tel: '',
+      address: '',
+      createdAt: '',
     };
   }
 
   componentDidMount() {
     this.props.dispatch({
-      type: 'product/loadData',
+      type: 'users/loadData',
       payload: {},
     });
   }
 
   render() {
-    console.log(this.props.products);
-
     const { products } = this.props;
 
     const columns = [
       {
-        title: '商品名',
-        dataIndex: 'title',
+        title: '用户名',
+        dataIndex: 'name',
         align: 'center',
         width: 200,
         ellipsis: true,
       },
       {
-        title: '商品图',
-        dataIndex: 'imgUrl',
-        align: 'center',
-        render: record => <img src={record} width="100px" alt="" />,
+        title: '电话号码',
+        dataIndex: 'tel',
+        align: 'center'
       },
       {
-        title: '价格',
-        dataIndex: 'OriginPrice',
+        title: '地址',
+        dataIndex: 'address',
         align: 'center',
         width: 200,
       },
       {
-        title: '类别',
-        dataIndex: 'name',
+        title: '注册时间',
+        dataIndex: 'createdAt',
         align: 'center',
         width: 200,
       }
     ];
-
     return (
+
       <div>
         <Table columns={columns} dataSource={products} rowKey={record => record._id} bordered />,
       </div>
@@ -63,5 +60,5 @@ class product extends Component {
   }
 }
 
-const mapStateToProps = state => state.product;
-export default connect(mapStateToProps)(product);
+const mapStateToProps = state => state.users;
+export default connect(mapStateToProps)(users);
