@@ -17,13 +17,14 @@ class products extends Component {
 
   componentDidMount() {
     this.props.dispatch({
-      type: 'product/loadData',
+      type: 'products/loadData',
       payload: {},
     });
   }
 
   render() {
-    const { products } = this.props;
+    const { products,loading } = this.props;
+    console.log(products,this.props)
 
     const columns = [
       {
@@ -55,15 +56,16 @@ class products extends Component {
       {
         title: '操作',
         align: 'center',
+        ellipsis: true,
         render: (text, record) => {
           return (
             <div>
               <span>
-                <Button type="primary">编辑</Button>
+                <Button type="primary" style={{width:"35%",textAlign:"center"}} icon="edit"></Button>
               </span>
-              <span> </span>
+              <span > </span>
               <span>
-                <Button type="danger">删除</Button>
+                <Button type="danger" style={{width:"35%"}} icon="delete"></Button>
               </span>
             </div>
           );
@@ -73,11 +75,11 @@ class products extends Component {
 
     return (
       <div>
-        <Table columns={columns} dataSource={products} rowKey={record => record._id} bordered />,
+        <Table columns={columns} dataSource={products} rowKey={record => record._id} loading={loading} bordered />,
       </div>
     );
   }
 }
 
-const mapStateToProps = state => state.product;
+const mapStateToProps = state => state.products;
 export default connect(mapStateToProps)(products);

@@ -1,7 +1,7 @@
 import { list } from '../services/admin';
 
 export default {
-  namespace: 'product',
+  namespace: 'products',
   state: {
     products: [],
     loading: false,
@@ -16,8 +16,11 @@ export default {
   },
   effects: {
     *loadData({ payload }, { call, put }) {
+      console.log("haha")
       yield put({ type: 'showLoading' });
       const result = yield call(list);
+      console.log("haha")
+      console.log(result)
       yield put({
         type: 'save',
         payload: {

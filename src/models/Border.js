@@ -7,12 +7,15 @@ export default {
   },
   reducers: {
     save(state, { payload }) {
-      return { ...state, ...payload};
+      return { ...state, ...payload,loading:false};
     },
+    showLoading(state,action){
+      return{...state,loading:true}
+    }
   },
   effects: {
     *loadData({ payload }, { call, put }) {
-      // 参数payload是当前触发effects时传递的数据，调用list方法参数传页码
+      yield put({type:'showLoading'})
       const result = yield call(Borders);
       yield put({
         type: 'save',

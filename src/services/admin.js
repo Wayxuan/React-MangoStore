@@ -7,7 +7,15 @@ export const log = (params)=>{
 
 //获取商品列表
 export const list =()=>{
-  return instance.GET('/api/detail')
+ /*  return new Promise((reslove, reject)=>{
+    setTimeout(()=>{
+      instance.GET('/api/detail')
+      .then(res=>{
+        reslove(res)
+      })
+    },10000)
+  }) */
+ return instance.GET('/api/detail')
 }
 
 //获取用户列表

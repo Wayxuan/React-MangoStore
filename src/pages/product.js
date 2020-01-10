@@ -11,8 +11,8 @@ class product extends Component {
       title: '',
       imgUrl: '',
       OriginPrice: '',
-      name: '',
-    };
+      name: ''
+  };
   }
 
   componentDidMount() {
@@ -22,9 +22,9 @@ class product extends Component {
     });
   }
 
-  render() {
-    const { products } = this.props;
 
+  render() {
+    const { products ,loading} = this.props;
     const columns = [
       {
         title: '商品名',
@@ -53,10 +53,9 @@ class product extends Component {
         width: "20%",
       }
     ];
-
     return (
       <div>
-        <Table columns={columns} dataSource={products} rowKey={record => record._id} bordered />,
+        <Table columns={columns} dataSource={products} rowKey={record => record._id}  loading={loading} bordered />,
       </div>
     );
   }
@@ -64,3 +63,4 @@ class product extends Component {
 
 const mapStateToProps = state => state.product;
 export default connect(mapStateToProps)(product);
+

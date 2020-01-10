@@ -24,7 +24,7 @@ class Borders extends Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products , loading} = this.props;
     const columns = [
       {
         title: '商品名',
@@ -62,7 +62,7 @@ class Borders extends Component {
 
     return (
       <div>
-        <Table columns={columns} dataSource={products} rowKey={record => record._id} bordered />,
+        <Table columns={columns} dataSource={products} rowKey={record => record._id} loading={loading} bordered />,
       </div>
     );
   }

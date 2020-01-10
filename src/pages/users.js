@@ -23,7 +23,7 @@ class users extends Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products,loading } = this.props;
 
     const columns = [
       {
@@ -55,7 +55,7 @@ class users extends Component {
     return (
 
       <div>
-        <Table columns={columns} dataSource={products} rowKey={record => record._id} bordered />,
+        <Table columns={columns} dataSource={products} rowKey={record => record._id} loading={loading} bordered />,
       </div>
     );
   }

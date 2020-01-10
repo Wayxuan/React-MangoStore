@@ -25,7 +25,7 @@ class orders extends Component {
 
   render() {
 
-    const { products } = this.props;
+    const { products,loading } = this.props;
 
     const columns = [
       {
@@ -64,7 +64,7 @@ class orders extends Component {
 
     return (
       <div>
-        <Table columns={columns} dataSource={products} rowKey="_id" bordered />,
+        <Table columns={columns} dataSource={products} rowKey="_id" loading={loading} bordered />,
       </div>
     );
   }

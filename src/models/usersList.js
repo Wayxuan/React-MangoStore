@@ -7,11 +7,15 @@ export default({
   },
   reducers:{
     save({state},{payload}){
-      return {...state,...payload}
+      return {...state,...payload,loading:false}
+    },
+    showLoading(state,action){
+      return{...state,loading:true}
     }
   },
   effects:{
     *loadData({payload},{call,put}){
+      yield put({type:'showLoading'})
       const result=yield call(users)
       yield put({
         type:"save",
