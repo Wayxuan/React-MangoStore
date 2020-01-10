@@ -55,7 +55,7 @@ class search extends React.Component {
   render() {
     const { dataSource } = this.state;
     return (
-      <div className="global-search-wrapper" style={{ width: 300 }}>
+      <div className="global-search-wrapper" style={{ width: "40%" }}>
         <AutoComplete
           className="global-search"
           size="large"
@@ -66,11 +66,11 @@ class search extends React.Component {
           placeholder="input here"
           optionLabelProp="text"
         >
-          <Input
+          <Input size="large"
             suffix={
               <Button
                 className="search-btn"
-                style={{ marginRight: -12 }}
+                style={{ marginRight: -12}}
                 size="large"
                 type="primary"
               >

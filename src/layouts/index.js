@@ -9,7 +9,7 @@ function BasicLayout(props) {
   return (
     <div>
     <Layout>
-      <Header className={styles.header} style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+      <Header className={styles.header} style={{ position: 'fixed', zIndex: 2, width: '100%' }}>
         <div className={styles.logo}>
           <img src={require('../assets/logo.png')} alt="logo" width="200%" height="110%" />
         </div>
