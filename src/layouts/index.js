@@ -92,7 +92,7 @@ function BasicLayout(props) {
               <Menu.Item
                 key="7"
                 onClick={() => {
-                  router.replace('/');
+                  router.replace('/editor');
                 }}
               >
                 修改商品
