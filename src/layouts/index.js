@@ -9,7 +9,7 @@ function BasicLayout(props) {
   return (
     <div>
     <Layout>
-      <Header className={styles.header} style={{ position: 'fixed', zIndex: 2, width: '100%' }}>
+      <Header className={styles.header} style={{ position: 'fixed', zIndex:6, width: '100%' }}>
         <div className={styles.logo}>
           <img src={require('../assets/logo.png')} alt="logo" width="200%" height="110%" />
         </div>
@@ -27,7 +27,7 @@ function BasicLayout(props) {
         <Sider
         style={{
           overflow: 'auto',
-          height: '90vh',
+          height: '88.8vh',
           position: 'fixed',
           left: 0,
           marginTop:64
@@ -40,7 +40,7 @@ function BasicLayout(props) {
             <Menu.Item
               key="1"
               onClick={() => {
-                router.replace('/');
+                router.replace('/test');
               }}
             >
               <Icon type="pie-chart" />
@@ -79,7 +79,7 @@ function BasicLayout(props) {
                   router.replace('/search');
                 }}
               >
-                查询商品
+                商品查询
               </Menu.Item>
               <Menu.Item
                 key="6"
@@ -95,7 +95,7 @@ function BasicLayout(props) {
                   router.replace('/editor');
                 }}
               >
-                修改商品
+                商品入库
               </Menu.Item>
               <Menu.Item
                 key="8"

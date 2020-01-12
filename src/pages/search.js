@@ -27,16 +27,16 @@ function renderOption(item) {
     <Option key={item.category} text={item.category}>
       <div className="global-search-item">
         <span className="global-search-item-desc">
-          Found {item.query} on
+          {item.query}
           <a
-            href={`https://s.taobao.com/search?q=${item.query}`}
+            href={`https://www.yougou.com/ssc/suggest.sc?term=${item.query}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {item.category}
+            {item.Numb}
           </a>
         </span>
-        <span className="global-search-item-count">{item.count} results</span>
+        <span className="global-search-item-count">{item.title} results</span>
       </div>
     </Option>
   );

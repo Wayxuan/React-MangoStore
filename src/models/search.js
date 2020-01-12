@@ -1,10 +1,10 @@
-import { list } from '../services/admin';
+import {list} from "../services/admin"
 
-export default {
-  namespace: 'products',
-  state: {
-    products: [],
-    loading: false,
+export default({
+  namespace:"search",
+  state:{
+    products:[],
+    loading:false,
   },
   reducers: {
     save(state, { payload }) {
@@ -14,18 +14,18 @@ export default {
       return { ...state, loading: true };
     },
   },
-  effects: {
-    *loadData({ payload }, { call, put }) {
-      console.log("haha")
+  effects:{
+    *loadData({payload},{call,put}){
+      console.log('第一波data')
       yield put({ type: 'showLoading' });
-      const result = yield call(list);
-      console.log(result)
+      const result =yield call(list);
+      console.log(result,result.data)
       yield put({
         type: 'save',
         payload: {
           products: result.data,
         },
       });
-    },
-  },
-};
+    }
+  }
+})

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let baseUrl = "http://192.168.11.132:1314";
+let baseUrl = "http://www.wayxuan.wang:1314";
 
 const instance = axios.create({
     timeout: 5000, // 超时时间
