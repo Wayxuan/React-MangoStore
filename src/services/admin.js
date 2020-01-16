@@ -36,3 +36,24 @@ export const Aorders =()=>{
 export const Borders =()=>{
   return instance.GET('/api/cart/allC')
 }
+
+// 删除所选商品
+export const Dele=(id)=>{
+  console.log("ww")
+  return instance.POST("/api/crud",id)
+}
+
+// 获取商品详情
+export const Detail=(id)=>{
+  return instance.GET("/api/crud/"+id)
+}
+
+// 获取商品分类
+export const Category=(id)=>{
+  return instance.GET("/api/category")
+}
+
+// 修改商品详情
+export const ChangeDetail=(id)=>{
+  return instance.PUT("/api/crud/change",id)
+}

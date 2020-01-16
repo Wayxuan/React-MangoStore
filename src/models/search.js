@@ -5,6 +5,7 @@ export default({
   state:{
     products:[],
     loading:false,
+    product:{}
   },
   reducers: {
     save(state, { payload }) {

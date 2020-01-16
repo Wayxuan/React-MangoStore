@@ -5,3 +5,6 @@ html, body, #root {
 body {
   margin: 0;
 }
+.ant-select-dropdown{
+  z-index: 0;
+}

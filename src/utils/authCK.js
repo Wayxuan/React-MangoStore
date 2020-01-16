@@ -12,7 +12,7 @@ export function getCookie(name) {
   var arr = str.split("; ");
   for (var i = 0; i < arr.length; i++) {
     var arr1 = arr[i].split("=");
-    console.log(arr1,arr1[0],arr1[1])
+    console.log(arr1,"aaa",arr1[0],"bbb",arr1[1])
     if (arr1[0] === name) {
       return arr1[1];
     }

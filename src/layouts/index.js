@@ -9,7 +9,7 @@ function BasicLayout(props) {
   return (
     <div>
     <Layout>
-      <Header className={styles.header} style={{ position: 'fixed', zIndex:6, width: '100%' }}>
+      <Header className={styles.header} style={{ position: 'fixed', zIndex:2, width: '100%' }}>
         <div className={styles.logo}>
           <img src={require('../assets/logo.png')} alt="logo" width="200%" height="110%" />
         </div>
@@ -40,7 +40,7 @@ function BasicLayout(props) {
             <Menu.Item
               key="1"
               onClick={() => {
-                router.replace('/test');
+                router.replace('/');
               }}
             >
               <Icon type="pie-chart" />
@@ -92,7 +92,7 @@ function BasicLayout(props) {
               <Menu.Item
                 key="7"
                 onClick={() => {
-                  router.replace('/editor');
+                  router.replace('/add');
                 }}
               >
                 商品入库

@@ -31,7 +31,8 @@ function logBtn() {
   );
   return (
     <div>
-      <Dropdown overlay={menu}>
+    <Dropdown overlay={menu} subMenuCloseDelay={10}
+    getPopupContainer={triggerNode => triggerNode.parentElement}>
         <Button type="primary" className={styles.btn}>
           <div className={styles.fontBox}>
             <span>Admin</span>

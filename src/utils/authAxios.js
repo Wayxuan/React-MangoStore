@@ -1,10 +1,10 @@
 import axios from "axios";
 
-let baseUrl = "http://www.wayxuan.wang:1314";
+let baseUrl = "http://192.168.11.46:1314";
 
 const instance = axios.create({
     timeout: 5000, // 超时时间
-	  baseURL: baseUrl
+    baseURL: baseUrl
 });
 
 instance.interceptors.request.use(
