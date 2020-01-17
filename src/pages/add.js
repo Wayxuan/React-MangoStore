@@ -64,7 +64,7 @@ class add extends React.Component {
     if (e.file.status === 'done') {
       console.log(e.file.response.file);
       this.setState({
-        imgUrl: 'http://192.168.11.76:1314' + e.file.response.file,
+        imgUrl: 'http://192.168.43.239:1314' + e.file.response.file,
       });
      console.log(this.state.imgUrl)
     }
@@ -121,7 +121,7 @@ class add extends React.Component {
               onChange={this.uploadHandle.bind(this)}
                // eslint-disable-next-line
               name="avatar"
-              action="http://192.168.11.76:1314/upload"
+              action="http://192.168.43.239:1314/upload"
               listType="picture"
             >
               <Button>

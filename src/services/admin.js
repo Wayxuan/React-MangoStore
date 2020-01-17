@@ -62,3 +62,8 @@ export const ChangeDetail=(id)=>{
 export const Add=(product)=>{
   return instance.POST("/api/crud/add",product)
 }
+
+// 修改商品分类
+export const Cate=(kind)=>{
+    return instance.PUT("/api/type",kind)
+}

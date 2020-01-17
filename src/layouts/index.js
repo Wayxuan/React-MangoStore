@@ -1,7 +1,9 @@
 import styles from './index.css';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon,message } from 'antd';
 import router from 'umi/router';
 import LogBtn from '../components/logBtn';
+import { isLogined } from '../utils/authLocal';
+
 
 function BasicLayout(props) {
   const { Header, Content, Footer, Sider } = Layout;
@@ -49,7 +51,11 @@ function BasicLayout(props) {
             <Menu.Item
               key="2"
               onClick={() => {
-                router.replace('/product');
+                if (isLogined()) {
+                  router.replace('/product');
+                }else{
+                      message.warning("请管理员先登录")
+                    }
               }}
             >
               <Icon type="desktop" />
@@ -58,7 +64,11 @@ function BasicLayout(props) {
             <Menu.Item
               key="3"
               onClick={() => {
-                router.replace('/users');
+                if (isLogined()) {
+                  router.replace('/users');
+                }else{
+                      message.warning("请管理员先登录")
+                    }
               }}
             >
               <Icon type="user" />
@@ -76,7 +86,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="5"
                 onClick={() => {
-                  router.replace('/search');
+                  if (isLogined()) {
+                    router.replace('/search');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                 商品查询
@@ -84,7 +98,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="6"
                 onClick={() => {
-                  router.replace('/products');
+                  if (isLogined()) {
+                    router.replace('/products');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                 商品管理
@@ -92,7 +110,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="7"
                 onClick={() => {
-                  router.replace('/add');
+                  if (isLogined()) {
+                    router.replace('/add');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                 商品入库
@@ -100,7 +122,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="8"
                 onClick={() => {
-                  router.replace('/category');
+                  if (isLogined()) {
+                    router.replace('/category');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                 分类管理
@@ -118,7 +144,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="9"
                 onClick={() => {
-                  router.replace('/orders');
+                  if (isLogined()) {
+                    router.replace('/orders');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                 全部订单
@@ -126,7 +156,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="10"
                 onClick={() => {
-                  router.replace('/Aorders');
+                  if (isLogined()) {
+                    router.replace('/Aorders');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                 已销售订单
@@ -134,7 +168,11 @@ function BasicLayout(props) {
               <Menu.Item
                 key="11"
                 onClick={() => {
-                  router.replace('/Borders');
+                  if (isLogined()) {
+                    router.replace('/Borders');
+                  }else{
+                        message.warning("请管理员先登录")
+                      }
                 }}
               >
                  未付款订单
@@ -143,7 +181,11 @@ function BasicLayout(props) {
                 <Menu.Item
                   key="12"
                   onClick={() => {
-                    router.replace('/product');
+                    if (isLogined()) {
+                      router.replace('/test');
+                    }else{
+                          message.warning("请管理员先登录")
+                        }
                   }}
                 >
                   商品销售分析
@@ -151,7 +193,11 @@ function BasicLayout(props) {
                 <Menu.Item
                   key="13"
                   onClick={() => {
-                    router.replace('/mine');
+                    if (isLogined()) {
+                      router.replace('/mine');
+                    }else{
+                          message.warning("请管理员先登录")
+                        }
                   }}
                 >
                   生成分析报告
