@@ -38,6 +38,8 @@ class products extends Component {
           },
         });
         message.success('删除成功');
+      }else{
+        message.warning("请管理员先登录")
       }
     }
 
@@ -46,6 +48,8 @@ class products extends Component {
       if (isLogined()) {
         // 点击跳转页面并把id传过去
         router.replace('/editor?id='+e);
+      }else{
+        message.warning("请管理员先登录")
       }
     }
 

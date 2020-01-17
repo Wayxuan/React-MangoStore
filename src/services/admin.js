@@ -57,3 +57,8 @@ export const Category=(id)=>{
 export const ChangeDetail=(id)=>{
   return instance.PUT("/api/crud/change",id)
 }
+
+// 新增商品
+export const Add=(product)=>{
+  return instance.POST("/api/crud/add",product)
+}

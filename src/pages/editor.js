@@ -24,6 +24,9 @@ class edit extends React.Component {
       type: 'editor/detail',
       payload: { id },
     });
+    this.props.dispatch({
+      type: 'editor/category',
+    });
   }
 
   handleSubmit = e => {
@@ -70,10 +73,7 @@ class edit extends React.Component {
     const { product } = this.props;
     this.props.form.setFieldsValue({
       title: product.data.title,
-    });
-    this.props.dispatch({
-      type: 'editor/category',
-    });
+    })
   };
   getMenu = e => {
     console.log('详情后的', this.props);
@@ -104,13 +104,13 @@ class edit extends React.Component {
 
         <Form.Item label="商品名">
           {getFieldDecorator('title', {
-            rules: [{ required: true, message: 'Please input product name!' }],
+            rules: [{ required: true, message: '必填' }],
           })(<Input onFocus={this.getTitle} />)}
         </Form.Item>
         <br />
-        <Form.Item label="Select" hasFeedback>
+        <Form.Item label="种类" hasFeedback>
           {getFieldDecorator('name', {
-            rules: [{ required: true, message: '先有名字才有种类哦!' }],
+            rules: [{ required: true, message: '必选' }],
           })(
             <Select placeholder="Please select a category" onFocus={this.getMenu}>
               {menu.map(item => (

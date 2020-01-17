@@ -1,11 +1,13 @@
 import React from 'react';
-import { AutoComplete, Button, Input, Icon, Card } from 'antd';
+import { AutoComplete, Button, Input, Icon, Card, message } from 'antd';
 import { connect } from 'dva';
 import router from 'umi/router';
+import { isLogined } from '../utils/authLocal';
+
 
 
 const { Meta } = Card;
-class test extends React.Component {
+class search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -71,18 +73,16 @@ class test extends React.Component {
 
   onClickHandle=(e)=>{
    console.log(e.currentTarget.getAttribute('data-id'))
-   let id=e.currentTarget.getAttribute('data-id')
-   router.replace('/editor?id='+id)
+   if (isLogined()) {
+    // 点击跳转页面并把id传过去
+    let id=e.currentTarget.getAttribute('data-id')
+    router.replace('/editor?id='+id)
+  }else{
+    message.warning("请管理员先登录")
+  }
+
 }
 
-  //* 现在只需要回车的时候 把 输入框中对应的 datasource的数据都调出来就行
-  /**
-   * onSelect 回车只能选中一个，但是当下的datasource异步还是上一次的十几个结果
-   * 可能需要onChange，但是onChange调用不动
-   * 自己添加点击事件也没反应
-   * 莫非用到生命周期ComponentdidUpdata
-   * 或者这个datasource应该直接在redux里过滤出来，这边只接受展示列表和信息0.0
-   * */
 
   render() {
     console.log(this.props);
@@ -133,7 +133,7 @@ class test extends React.Component {
                 justifyContent: 'space-around',
                 textAlign:"center"
               }}
-              cover={<img alt="example" src={item.imgUrl} style={{ width: '100px',height:"100%",marginLeft:"2px"}} />}
+              cover={<img alt="example" src={item.imgUrl} style={{ width: '100px',height:"100%",marginLeft:"1px"}} />}
               key={item._id}
               actions={[
                 <div style={{ display: 'flex', textAlign: 'left', width: '100%' }}>
@@ -154,4 +154,4 @@ class test extends React.Component {
 }
 
 const mapStateToProps = state => state.search;
-export default connect(mapStateToProps)(test);
+export default connect(mapStateToProps)(search);
