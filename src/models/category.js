@@ -23,11 +23,10 @@ export default {
     },
     *cate({payload},{call,put}){
       console.log(payload)
-      const result=yield call(Cate,payload);
-      console.log(result)
-      yield put({
-        type: 'save'
-      });
+      yield call(Cate,payload);
+     /*  yield put({
+        type: 'loadData'
+      }); */
     }
   },
 };
