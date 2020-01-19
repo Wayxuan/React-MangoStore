@@ -24,9 +24,6 @@ export default {
     *cate({payload},{call,put}){
       console.log(payload)
       yield call(Cate,payload);
-     /*  yield put({
-        type: 'loadData'
-      }); */
     }
   },
 };

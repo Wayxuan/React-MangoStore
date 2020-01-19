@@ -84,7 +84,7 @@ class edit extends React.Component {
     if (e.file.status === 'done') {
       console.log(e.file.response.file);
       this.setState({
-        imgUrl: 'http://172.20.10.5:1314' + e.file.response.file,
+        imgUrl: 'http://192.168.0.108:1314' + e.file.response.file,
       });
     }
   };
@@ -137,7 +137,7 @@ class edit extends React.Component {
               onChange={this.uploadHandle.bind(this)}
                // eslint-disable-next-line
               name="avatar"
-              action="http://172.20.10.5:1314/upload"
+              action="http://192.168.0.108:1314/upload"
               listType="picture"
             >
               <Button>

@@ -121,10 +121,11 @@ class EditableTable extends React.Component {
           name: row.name,
         },
       });
+      this.setState({ editingKey: '' });
     });
   }
 
-  componentDidUpdate() {}
+
   edit(key) {
     this.setState({ editingKey: key });
   }
