@@ -122,10 +122,13 @@ class EditableTable extends React.Component {
         },
       });
       this.setState({ editingKey: '' });
+      this.props.dispatch({
+        type:'category/loadData',
+      })
     });
   }
 
-
+ 
   edit(key) {
     this.setState({ editingKey: key });
   }
